@@ -20,8 +20,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
-        self.view.endEditing(true);
-        return false;
+        //self.view.endEditing(true);
+        //return false;
+        if (textField.returnKeyType==UIReturnKeyType.Go)
+		{
+			hideKeyboard();
+			validator.validate(self)
+		}
+		return true
     }
 }
 ```
